@@ -5,6 +5,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+// 1. Setns to host's mount ns
+// 2. open a directory and get fd
+// 3. setns back to container's mount ns
+// 4. create a file relative to the fd from host 
 int main()
 {
 	int err = 0, dirfd, fd, host_mnt_fd, container_mnt_fd;

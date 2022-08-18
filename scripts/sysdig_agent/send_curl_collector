@@ -1,0 +1,14 @@
+#!/bin/bash
+
+curl -k -L -X POST 'https://ec2-35-171-25-135.compute-1.amazonaws.com/api/v2/policies' -H 'authority: ec2-3-85-9-14.compute-1.amazonaws.com' -H 'sec-ch-ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"' -H 'dnt: 1' -H 'sec-ch-ua-mobile: ?0' -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36' -H 'content-type: application/json' -H 'accept: application/json' -H 'x-sysdig-product: SDS' -H 'sec-ch-ua-platform: "macOS"' -H 'origin: https://ec2-3-85-9-14.compute-1.amazonaws.com' -H 'sec-fetch-site: same-origin' -H 'sec-fetch-mode: cors' -H 'sec-fetch-dest: empty' -H 'referer: https://ec2-3-85-9-14.compute-1.amazonaws.com/secure/' -H 'accept-language: en-US,en;q=0.9,ru;q=0.8' -H 'Authorization: Bearer 944c1128-757e-4700-8099-c03faffd2e5a' -H 'Cookie: INGRESSCOOKIEAPI=9929a4af8af734ac' --data-raw '{
+    "name": "Alok Test Drift3",
+    "description": "Alok Test Drift3",
+    "enabled": true,
+    "scope": null,
+    "ruleNames": [
+    ],
+    "notificationChannelIds": [],
+    "severity": 0,
+    "actions": [],
+    "type": "drift"
+}'

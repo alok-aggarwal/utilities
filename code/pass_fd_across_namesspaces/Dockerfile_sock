@@ -1,0 +1,17 @@
+FROM ubuntu:latest
+
+RUN apt-get update && \
+	apt-get -y install \
+		cmake \
+		gcc \
+		g++ \
+		vim \
+		kmod \
+		libc6-dev \
+		libelf-dev \
+		make \
+		pkg-config \
+		clang \
+		llvm
+
+CMD /mnt/setns_sock_fd

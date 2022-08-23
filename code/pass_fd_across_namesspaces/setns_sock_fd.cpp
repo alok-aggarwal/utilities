@@ -159,7 +159,7 @@ int main() {
       unlink("/setns_exp/tmpfile");
     }
 
-    dirfd = open("/setns_exp", O_PATH);
+    dirfd = open("/setns_exp", O_DIRECTORY);
     if (dirfd < 0) {
       printf("pid = %d: Failed to open directory %s \n", getpid(),
              "/setns_exp");

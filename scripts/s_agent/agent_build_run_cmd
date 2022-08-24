@@ -17,8 +17,13 @@ docker run -it --name agent-install -e MAKE_JOBS=8 -v $directory:/draios:ro -v $
 
 docker run -it --name agent-bash-drift-rebased -e MAKE_JOBS=8 -v $directory:/draios:ro -v $data_directory/draios:/opt/draios -v $data_directory/draios/pkgs:/out -v /var/run/docker.sock:/var/run/docker.sock -v $data_directory/build:/code/agent/build -v $data_directory/build/libscap:/code/libscap/build -v $data_directory/build/libsinsp:/code/libsinsp/build -v $data_directory/pipcache:/root/.cache -v ~/.docker:/root/.docker quay.io/sysdig/agent-builder:latest-centos bash
 
+
 #RUN agent container = change ACCESS_KEY, COLLECTOR, COLLECTOR_PORT and container name:
 docker run -it --rm --name sysdig-agent --privileged --net host --pid host -e ACCESS_KEY=e678611c-3a1b-4cc8-a522-774e19c6a5be -e COLLECTOR=collector-staging.sysdigcloud.com -e COLLECTOR_PORT=6443 -e CHECK_CERTIFICATE="false" -e SECURE=true -v /var/run/docker.sock:/host/var/run/docker.sock -v /dev:/host/dev -v /proc:/host/proc:ro -v /boot:/host/boot:ro -v /lib/modules:/host/lib/modules:ro -v /usr:/host/usr:ro sysdig/agent
+
+#RUN local agent container = change ACCESS_KEY, COLLECTOR, COLLECTOR_PORT and container name, try mounting /opt/draios/etc/dragent.yaml:
+docker run -it --rm --name sysdig-agent --privileged --net host --pid host -e ACCESS_KEY=e678611c-3a1b-4cc8-a522-774e19c6a5be -e COLLECTOR=collector-staging.sysdigcloud.com -e COLLECTOR_PORT=6443 -e CHECK_CERTIFICATE="false" -e SECURE=true -v /var/run/docker.sock:/host/var/run/docker.sock -v /dev:/host/dev -v /proc:/host/proc:ro -v /boot:/host/boot:ro -v /lib/modules:/host/lib/modules:ro -v /usr:/host/usr:ro -v /opt/draios/etc/dragent.yaml:/opt/draios/etc/dragent.yaml -v /opt/draios/logs:/opt/draios/logs agent:latest-local
+
 
 #BUILD UT
 docker run -it --name agent-ut-dragent -e MAKE_JOBS=8 -v $directory:/draios:ro -v $data_directory/draios:/opt/draios -v $data_directory/draios/pkgs:/out -v /var/run/docker.sock:/var/run/docker.sock -v $data_directory/build:/code/agent/build -v $data_directory/build/libscap:/code/libscap/build -v $data_directory/build/libsinsp:/code/libsinsp/build -v $data_directory/pipcache:/root/.cache -v ~/.docker:/root/.docker quay.io/sysdig/agent-builder:latest-centos make unit-test-dragent

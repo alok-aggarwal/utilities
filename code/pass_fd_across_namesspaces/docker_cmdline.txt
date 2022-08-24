@@ -1,2 +1,3 @@
 docker run -it --rm --privileged --pid host -v /setns_exp:/mnt setns_fd:3
 docker run -it --rm --privileged --pid host -v /setns_exp:/mnt setns_sock_fd:1
+docker run -it --rm --privileged --pid host -v /setns_exp:/mnt setns_sock_fd_check_exists:1

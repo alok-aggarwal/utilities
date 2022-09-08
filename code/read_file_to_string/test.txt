@@ -1,0 +1,4 @@
+Officially, this isn't required to work under the C++98 or 03 standard (string isn't required to store data contiguously) but in fact it works with all known implementations, and C++11 and later do require contiguous storage, so it's guaranteed to work with them.
+But really what you are tyring to do is new for you.
+Also uploading to git seems cool.
+Aarnik is so cutu.

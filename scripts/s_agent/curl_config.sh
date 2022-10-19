@@ -18,7 +18,7 @@ curl -k --location --request PUT 'https://secure-staging.sysdig.com/api/agents/c
     "files": [
         {
             "filter": "*",
-            "content": "secure_events_extra_fields: []\nsecure_audit_streams:\n  enabled: true\n  enabled_opt:\n    weak: true\nnetwork_topology:\n  enabled: true\n  enabled_opt:\n    weak: true\nfalcobaseline:\n  enabled: true\n  report_interval: 900000000123\naudit_tap:\n  enabled: false"
+            "content": "secure_events_extra_fields: [evt.time.iso8601, evt.time, evt.type, syscall.type, evt.category, evt.args, evt.res, evt.failed, proc.pid, proc.exe, proc.name, proc.args, proc.cmdline, proc.cwd, user.uid, user.loginuid, user.loginname, user.shell, user.homedir, user.name, group.gid, group.name, container.id, container.name]\nsecure_audit_streams:\n  enabled: true\n  enabled_opt:\n    weak: true\nnetwork_topology:\n  enabled: true\n  enabled_opt:\n    weak: true\nfalcobaseline:\n  enabled: true\n  report_interval: 900000000123\naudit_tap:\n  enabled: false"
         }
     ]
 }'

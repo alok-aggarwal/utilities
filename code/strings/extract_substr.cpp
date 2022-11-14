@@ -26,7 +26,7 @@ int main()
 
 		
 		printf("sizeof upperdir str = %lu, overlay_str = %s, using string size = %lu\n", sizeof(upperdir_str), overlay_str.c_str(), upperdir_str.size());
-		start = start+upperdir_str.size()-1;
+		start = start+upperdir_str.size();
 		printf("start = %lu\n", start);
 		
 		std::size_t end = opts.find(comma_str, start);

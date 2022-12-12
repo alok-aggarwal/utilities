@@ -11,5 +11,13 @@ int main()
 		printf("drift_debug: detect_overlayfs: lower_dir not found");
 		return 1;
 	}
-	printf("extracted path = %s", path.c_str());
+	printf("extracted path = %s\n", path.c_str());
+
+	std::string omit_last = full_path.substr(0, full_path.find_last_of('/'));
+
+	printf("last omitted path = %s\n", omit_last.c_str());
+
+	std::string add_back = omit_last.append(full_path.substr(full_path.find_last_of('/')));
+
+	printf("added back path = %s\n", add_back.c_str());
 }

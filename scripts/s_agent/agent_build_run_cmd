@@ -49,3 +49,8 @@ docker run -it --name agent-ut-dragent -e MAKE_JOBS=8 -v $directory:/draios:ro -
 #build with local builder - unit tests libinfra
 docker run -it --name agent-ut-libinfra -e MAKE_JOBS=8 -v $directory:/draios:ro -v $data_directory/draios:/opt/draios -v $data_directory/draios/pkgs:/out -v /var/run/docker.sock:/var/run/docker.sock -v $data_directory/build:/code/agent/build -v $data_directory/build/libscap:/code/libscap/build -v $data_directory/build/libsinsp:/code/libsinsp/build -v $data_directory/pipcache:/root/.cache -v ~/.docker:/root/.docker agent-builder:latest-centos make unit-test-libinfra
 
+
+
+Run a simple ubuntu container with all privileges agent has
+docker run -it --rm --name privileged_ubuntu --privileged --net host --pid host -v /var/run/docker.sock:/host/var/run/docker.sock -v /dev:/host/dev -v /proc:/host/proc:ro -v /boot:/host/boot:ro -v /lib/modules:/host/lib/modules:ro -v /usr:/host/usr:ro aloklw/running_ubuntu_jammy
+

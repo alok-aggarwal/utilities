@@ -1,0 +1,114 @@
+#!/bin/bash
+
+#tell script to exit on SIGINT (ctrl+c)
+trap "echo; exit" INT
+PREFIX="timeout 1 "
+#allow agent to parse container mounts
+sleep 5s
+while true
+do
+	${PREFIX}truncate
+	${PREFIX}numfmt
+	${PREFIX}fmt
+	${PREFIX}fold
+	${PREFIX}uniq
+	${PREFIX}cut
+	${PREFIX}who
+	${PREFIX}groups
+	${PREFIX}csplit
+	${PREFIX}sort
+	${PREFIX}expand
+	${PREFIX}printf
+	${PREFIX}printenv
+	${PREFIX}unlink
+	${PREFIX}tee
+	${PREFIX}chcon
+	${PREFIX}stat
+	${PREFIX}basename
+	${PREFIX}split
+	${PREFIX}nice
+	${PREFIX}yes
+	${PREFIX}whoami
+	${PREFIX}sha224sum
+	${PREFIX}hostid
+	${PREFIX}users
+	${PREFIX}stdbuf
+	${PREFIX}base64
+	${PREFIX}unexpand
+	${PREFIX}cksum
+	${PREFIX}od
+	${PREFIX}paste
+	${PREFIX}nproc
+	${PREFIX}pathchk
+	${PREFIX}sha256sum
+	${PREFIX}wc
+	${PREFIX}test
+	${PREFIX}comm
+	${PREFIX}arch
+	${PREFIX}du
+	${PREFIX}factor
+	${PREFIX}sha512sum
+	${PREFIX}md5sum
+	${PREFIX}tr
+	${PREFIX}runcon
+	${PREFIX}env
+	${PREFIX}dirname
+	${PREFIX}tsort
+	${PREFIX}ls
+	${PREFIX}join
+	${PREFIX}shuf
+	${PREFIX}install
+	${PREFIX}logname
+	${PREFIX}pinky
+	${PREFIX}nohup
+	${PREFIX}expr
+	${PREFIX}pr
+	${PREFIX}tty
+	${PREFIX}timeout
+	${PREFIX}tail
+	${PREFIX}[
+	${PREFIX}seq
+	${PREFIX}ha384sum
+	${PREFIX}nl
+	${PREFIX}head
+	${PREFIX}id
+	${PREFIX}mkfifo
+	${PREFIX}sum
+	${PREFIX}dircolors
+	${PREFIX}ptx
+	${PREFIX}shred
+	${PREFIX}tac
+	${PREFIX}link
+	${PREFIX}chroot
+	${PREFIX}vdir
+	${PREFIX}chown
+	${PREFIX}touch
+	${PREFIX}ls
+	${PREFIX}dd
+	${PREFIX}uname
+	${PREFIX}true
+	${PREFIX}pwd
+	${PREFIX}date
+	${PREFIX}chgrp
+	${PREFIX}chmod
+	${PREFIX}mktemp
+	${PREFIX}cat
+	${PREFIX}mknod
+	${PREFIX}sync
+	${PREFIX}ln
+	${PREFIX}false
+	${PREFIX}rm
+	${PREFIX}mv
+	${PREFIX}cp
+	${PREFIX}echo
+	${PREFIX}readlink
+	${PREFIX}sleep 1
+	${PREFIX}stty
+	${PREFIX}mkdir
+	${PREFIX}df
+	${PREFIX}dir
+	${PREFIX}rmdir
+	${PREFIX}touch
+
+done
+

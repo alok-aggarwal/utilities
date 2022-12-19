@@ -1,0 +1,22 @@
+FROM ubuntu:18.04
+
+ENV DcVersion DISPLAY_VER
+ENV CommitHash COMMIT_HASH
+RUN apt-get update && \
+    apt-get install curl libmagic1 -y && \
+    mkdir -p /var/lib/backup/${DcVersion} && \
+    mkdir -p /var/lib/lacework/config && \
+    mkdir -p /var/log/lacework && \
+    mkdir -p /laceworkfim && \
+    curl -sSL DC_DOWNLOAD_URL/datacollector.gz | gunzip > /var/lib/backup/${DcVersion}/datacollector && \
+    apt-get clean && \
+    rm -rf \
+    /var/lib/apt/lists/* \
+    /tmp/* \
+    /var/tmp/* \
+    /usr/share/man \
+    /usr/share/doc \
+    /usr/share/doc-base
+
+COPY datacollector_wrap.sh /var/lib/backup/datacollector_wrap.sh
+CMD ["/var/lib/backup/datacollector_wrap.sh", "DISPLAY_VER"]

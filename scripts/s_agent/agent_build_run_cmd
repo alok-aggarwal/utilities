@@ -46,6 +46,10 @@ docker run -it --name agent-container -e MAKE_JOBS=8 -v $directory:/draios:ro -v
 docker run -it --name agent-ut-dragent -e MAKE_JOBS=8 -v $directory:/draios:ro -v $data_directory/draios:/opt/draios -v $data_directory/draios/pkgs:/out -v /var/run/docker.sock:/var/run/docker.sock -v $data_directory/build:/code/agent/build -v $data_directory/build/libscap:/code/libscap/build -v $data_directory/build/libsinsp:/code/libsinsp/build -v $data_directory/pipcache:/root/.cache -v ~/.docker:/root/.docker agent-builder:latest-centos make unit-test-dragent
 
 
+#build with local builder - unit tests userspace-shared
+docker run -it --name agent-ut-userspace-shared -e MAKE_JOBS=8 -v $directory:/draios:ro -v $data_directory/draios:/opt/draios -v $data_directory/draios/pkgs:/out -v /var/run/docker.sock:/var/run/docker.sock -v $data_directory/build:/code/agent/build -v $data_directory/build/libscap:/code/libscap/build -v $data_directory/build/libsinsp:/code/libsinsp/build -v $data_directory/pipcache:/root/.cache -v ~/.docker:/root/.docker agent-builder:latest-centos make unit-test-userspace-shared
+
+
 #build with local builder - unit tests libinfra
 docker run -it --name agent-ut-libinfra -e MAKE_JOBS=8 -v $directory:/draios:ro -v $data_directory/draios:/opt/draios -v $data_directory/draios/pkgs:/out -v /var/run/docker.sock:/var/run/docker.sock -v $data_directory/build:/code/agent/build -v $data_directory/build/libscap:/code/libscap/build -v $data_directory/build/libsinsp:/code/libsinsp/build -v $data_directory/pipcache:/root/.cache -v ~/.docker:/root/.docker agent-builder:latest-centos make unit-test-libinfra
 
